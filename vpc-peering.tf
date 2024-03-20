@@ -1,10 +1,10 @@
 data "aws_vpc" "ansible_vpc" {
-  id = "vpc-07e4c153c919263af"
+  id = "vpc-0a7c8641f32c6e6ff"
 }
 
 data "aws_route_table" "ansible_vpc_rt" {
-  # subnet_id = "subnet-0c1253b5d27eccc55"
-  vpc_id = "vpc-07e4c153c919263af"
+  # subnet_id = "subnet-0cbf109bfd9a43fd7"
+  vpc_id = "vpc-0a7c8641f32c6e6ff"
 }
 
 resource "aws_vpc_peering_connection" "foo" {
