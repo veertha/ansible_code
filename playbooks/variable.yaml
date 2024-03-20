@@ -1,0 +1,57 @@
+---
+- name: Playbook to install Nginx on Webservers
+  hosts: pub
+  become: yes
+  gather_facts: yes
+  vars:
+    AWS_ACCOUNT: "021976026968"
+  tasks:
+    - name: Print Variable
+      debug:
+        msg: System {{ inventory_hostname }} has variable {{ AWS_ACCOUNT }}
+
+    - name: Perform Apt update and Install basic packages
+      shell: apt update && apt install -y unzip jq net-tools
+      when: (ansible_facts['distribution'] == "Ubuntu" and ansible_facts['distribution_version'] == '20.04')
+
+    - name: Install Nginx Packages
+      apt:
+        name: nginx
+        state: latest
+        update_cache: yes
+
+    - name: Start nginx Service
+      shell: systemctl start nginx
+  tags:
+    - nginx
+
+- name: Playbook for Copying files
+  hosts: pub
+  become: yes
+  tasks:
+    - name: copying index.html
+      copy:
+        src: /home/ubuntu/ansible-kelly/playbooks/index.html
+        dest: /var/www/html/index.nginx-debian.html
+        owner: root
+        group: root
+        mode: "0644"
+
+    - name: Copy Style.css files
+      copy:
+        src: /home/ubuntu/ansible-kelly/playbooks/style.css
+        dest: /var/www/html/style.css
+        owner: root
+        group: root
+        mode: "0644"
+
+    - name: Copy Script.js files
+      copy:
+        src: /home/ubuntu/ansible-kelly/playbooks/script.js
+        dest: /var/www/html/script.js
+        owner: root
+        group: root
+        mode: "0644"
+
+  tags:
+    - files
