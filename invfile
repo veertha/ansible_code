@@ -1,14 +1,14 @@
 [pub]
-server01 ansible_port=22 ansible_host=54.166.127.18  ansible_user=ubuntu ansible_ssh_private_key_file=/etc/ansible/ansiblekey.pem 
-server02 ansible_port=22 ansible_host=23.20.181.131 ansible_user=ubuntu ansible_ssh_private_key_file=/etc/ansible/ansiblekey.pem
-server03 ansible_port=22 ansible_host=3.239.171.234 ansible_user=ubuntu ansible_ssh_private_key_file=/etc/ansible/ansiblekey.pem
+server01 ansible_port=22 ansible_host=34.229.174.254  ansible_user=ubuntu ansible_ssh_private_key_file=/etc/ansible/ansiblekey.pem 
+server02 ansible_port=22 ansible_host=54.147.252.27 ansible_user=ubuntu ansible_ssh_private_key_file=/etc/ansible/ansiblekey.pem
+server03 ansible_port=22 ansible_host=34.201.12.218 ansible_user=ubuntu ansible_ssh_private_key_file=/etc/ansible/ansiblekey.pem
 
 [pvt]
-testserver01 ansible_port=22 ansible_host=10.36.1.30  ansible_user=ubuntu ansible_ssh_private_key_file=/etc/ansible/ansiblekey.pem 
-testserver02 ansible_port=22 ansible_host=10.36.2.98 ansible_user=ubuntu ansible_ssh_private_key_file=/etc/ansible/ansiblekey.pem
-testserver03 ansible_port=22 ansible_host=10.36.3.136 ansible_user=ubuntu ansible_ssh_private_key_file=/etc/ansible/ansiblekey.pem
+testserver01 ansible_port=22 ansible_host=10.36.1.211  ansible_user=ubuntu ansible_ssh_private_key_file=/etc/ansible/ansiblekey.pem 
+testserver02 ansible_port=22 ansible_host=10.36.2.241 ansible_user=ubuntu ansible_ssh_private_key_file=/etc/ansible/ansiblekey.pem
+testserver03 ansible_port=22 ansible_host=10.36.3.75 ansible_user=ubuntu ansible_ssh_private_key_file=/etc/ansible/ansiblekey.pem
 
 [pip]
-54.166.127.18
-23.20.181.131
-3.239.171.234
+34.229.174.254
+54.147.252.27
+34.201.12.218
