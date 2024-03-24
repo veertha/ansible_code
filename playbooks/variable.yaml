@@ -4,7 +4,7 @@
   become: yes
   gather_facts: yes
   vars:
-    AWS_ACCOUNT: "021976026968"
+    AWS_ACCOUNT: "211125410805"
   tasks:
     - name: Print Variable
       debug:
@@ -31,7 +31,7 @@
   tasks:
     - name: copying index.html
       copy:
-        src: /home/ubuntu/ansible-kelly/playbooks/index.html
+        src: /home/ubuntu/ansible_code/playbooks/index.html
         dest: /var/www/html/index.nginx-debian.html
         owner: root
         group: root
@@ -39,7 +39,7 @@
 
     - name: Copy Style.css files
       copy:
-        src: /home/ubuntu/ansible-kelly/playbooks/style.css
+        src: /home/ubuntu/ansible_code/playbooks/style.css
         dest: /var/www/html/style.css
         owner: root
         group: root
@@ -47,7 +47,7 @@
 
     - name: Copy Script.js files
       copy:
-        src: /home/ubuntu/ansible-kelly/playbooks/script.js
+        src: /home/ubuntu/ansible_code/playbooks/script.js
         dest: /var/www/html/script.js
         owner: root
         group: root
