@@ -1,6 +1,6 @@
 ---
 - name: Play book to install nginx
-  hosts: pub:!server01
+  hosts: server01
   gather_facts: true
   become: true
 
