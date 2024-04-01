@@ -1,6 +1,6 @@
 ---
 - name: Install Redis Server
-  hosts: pub
+  hosts: server01
   become: true
   become_user: root
   tasks:
@@ -12,7 +12,7 @@
       #   - update
       #   - build-essential
       #   - tcl
-      shell: apt update && apt install -y build-essential tcl
+      shell: apt update && apt install -y unzip jq net-tools
 
       when: ansible_distribution == 'Ubuntu' and ansible_distribution_version == '20.04'
 
