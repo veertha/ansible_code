@@ -12,8 +12,8 @@
       #   - update
       #   - build-essential
       #   - tcl
-      shell: apt update && apt install -y build-essential tcl python3-pip && pip3 install redis
-
+      shell: apt update && apt install -y build-essential tcl
+      
       when: ansible_distribution == 'Ubuntu' and ansible_distribution_version == '20.04'
 
     - name: Check Redis Status
