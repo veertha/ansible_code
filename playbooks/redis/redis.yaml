@@ -1,6 +1,6 @@
 ---
 - name: Install Redis Server
-  hosts: server01
+  hosts: pub
   become: true
   become_user: root
   tasks:
@@ -42,7 +42,7 @@
         make install
       args:
         executable: /bin/bash
-      when: redis_status.rc != 1
+      when: redis_status.rc != 0
 
     - name: Configure Redis
       template:
