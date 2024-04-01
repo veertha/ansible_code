@@ -13,7 +13,7 @@
       #   - build-essential
       #   - tcl
       shell: apt update && apt install -y build-essential tcl
-      
+
       when: ansible_distribution == 'Ubuntu' and ansible_distribution_version == '20.04'
 
     - name: Check Redis Status
@@ -36,7 +36,7 @@
       when: redis_status.rc != 0
 
     - name: Compile and install Redis
-      shell: |
+      shell: 
         cd /tmp/redis-6.2.5
         make
         make install
