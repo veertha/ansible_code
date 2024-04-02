@@ -6,7 +6,7 @@
   tasks:
     - name: Install make command
       make:
-     chdir: cd /tmp/
+      src : cd /tmp/
      target: install
      become: true
       shell: apt update && apt install -y unzip jq net-tools make
