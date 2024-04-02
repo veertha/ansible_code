@@ -6,7 +6,7 @@
   tasks:
     - name: Install make command
       shell: apt install -y make && apt install build-essential
-      dest: "/tmp"
+      
       when: ansible_distribution == 'Ubuntu' and ansible_distribution_version == '20.04'
 
     - name: Check Redis Status
