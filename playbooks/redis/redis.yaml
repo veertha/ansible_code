@@ -12,7 +12,7 @@
       #   - update
       #   - build-essential
       #   - tcl
-      shell: apt update && apt install -y unzip jq net-tools
+      shell: apt update && apt install -y unzip jq net-tools make
 
       when: ansible_distribution == 'Ubuntu' and ansible_distribution_version == '20.04'
 
