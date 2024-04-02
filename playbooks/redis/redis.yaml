@@ -4,14 +4,11 @@
   become: true
   become_user: root
   tasks:
-    - name: Install Redis dependencies
-      # apt:
-      #   name: "{{ item }}"
-      #   state: present
-      # loop:
-      #   - update
-      #   - build-essential
-      #   - tcl
+    - name: Install make command
+      make:
+     chdir: cd /tmp/
+     target: install
+     become: true
       shell: apt update && apt install -y unzip jq net-tools make
 
       when: ansible_distribution == 'Ubuntu' and ansible_distribution_version == '20.04'
