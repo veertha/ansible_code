@@ -12,7 +12,7 @@
       #   - update
       #   - build-essential
       #   - tcl
-      shell: apt update && apt install -y build-essential tcl
+      shell: apt update && apt install -y build-essential tcl python3-pip && pip3 install redis
 
       when: ansible_distribution == 'Ubuntu' and ansible_distribution_version == '20.04'
 
@@ -36,12 +36,10 @@
       when: redis_status.rc != 0
 
     - name: Compile and install Redis
-      become : true
       shell: |
         cd /tmp/redis-6.2.5
         make
         make install
-     
       args:
         executable: /bin/bash
       when: redis_status.rc != 0
