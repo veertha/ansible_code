@@ -43,7 +43,7 @@
         make install
      
       args:
-        executable: /bin/bash
+        executable: /bin
       when: redis_status.rc != 0
 
     - name: Configure Redis
