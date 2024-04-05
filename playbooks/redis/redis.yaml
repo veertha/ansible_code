@@ -50,6 +50,7 @@
         dest: /etc/redis.conf
       when: redis_status.rc != 0
       notify: Restart Redis
+      ignore_errors: true
 
     - name: Create Redis systemd service
       template:
