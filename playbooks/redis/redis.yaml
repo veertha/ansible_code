@@ -1,12 +1,19 @@
 ---
 - name: Install Redis Server
-  hosts: server02
+  hosts: server01
   become: true
   become_user: root
   tasks:
-    - name: Install make command
-      shell: apt install -y make && apt install build-essential
-      
+    - name: Install Redis dependencies
+      # apt:
+      #   name: "{{ item }}"
+      #   state: present
+      # loop:
+      #   - update
+      #   - build-essential
+      #   - tcl
+      shell: apt update && apt install -y build-essential tcl python3-pip && pip3 install redis
+
       when: ansible_distribution == 'Ubuntu' and ansible_distribution_version == '20.04'
 
     - name: Check Redis Status
