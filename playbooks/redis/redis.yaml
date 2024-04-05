@@ -36,11 +36,12 @@
       when: redis_status.rc != 0
 
     - name: Compile and install Redis
+      become : true
       shell: |
         cd /tmp/redis-6.2.5
         make
         make install
-     become : true
+     
       args:
         executable: /bin/bash
       when: redis_status.rc != 0
