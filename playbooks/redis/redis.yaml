@@ -12,7 +12,7 @@
       #   - update
       #   - build-essential
       #   - tcl
-      shell: apt update && apt install -y build-essential tcl python3-pip && pip3 install redis && apt update && sudo apt upgrade -y && apt install -y make
+      shell: apt update && apt install -y build-essential tcl python3-pip && pip3 install redis
 
       when: ansible_distribution == 'Ubuntu' and ansible_distribution_version == '20.04'
 
@@ -50,7 +50,6 @@
         dest: /etc/redis.conf
       when: redis_status.rc != 0
       notify: Restart Redis
-      ignore_errors: true
 
     - name: Create Redis systemd service
       template:
